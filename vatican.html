@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vatican City &mdash; Priceless Joy DMC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; overflow-x: hidden; }
+  :root {
+    --navy: #0a1628; --navy-mid: #1a2744; --navy-light: #243558;
+    --gold: #c9a84c; --gold-bright: #d4af37; --gold-light: #e8cc7a;
+    --white: #ffffff; --gray-light: #f8f9fa; --gray-mid: #e9ecef;
+    --text-dark: #1a1a2e; --text-mid: #4a5568; --text-light: #718096;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; background: var(--navy); box-shadow: 0 2px 30px rgba(0,0,0,0.4); }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--white); letter-spacing: 0.02em; text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-toggle { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+
+  /* HERO */
+  .country-hero { min-height: 55vh; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0d1f3c 100%); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 80px; }
+  .country-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.2; }
+  .country-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,22,40,0.6), rgba(10,22,40,0.9)); }
+  .country-hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; max-width: 800px; }
+  .country-hero-region { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .country-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+  .country-hero-desc { font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 650px; margin: 0 auto; }
+  .hero-accent-line { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 1.5rem 0; }
+  .hero-accent-line .line { width: 60px; height: 1px; background: var(--gold); opacity: 0.5; }
+  .hero-accent-line .diamond { width: 8px; height: 8px; border: 1px solid var(--gold); transform: rotate(45deg); }
+
+  /* SECTIONS */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  .section { padding: 5rem 0; }
+  .section-dark { background: var(--navy); color: var(--white); }
+  .section-light { background: var(--gray-light); }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; color: var(--text-dark); }
+  .section-title.white { color: var(--white); }
+  .gold-underline { background-image: linear-gradient(to right, var(--gold-light), var(--gold)); background-position: 0 88%; background-repeat: no-repeat; background-size: 100% 3px; padding-bottom: 4px; }
+
+  /* INFO GRID */
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+  .info-card { background: var(--white); border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 2px 15px rgba(0,0,0,0.06); border: 1px solid var(--gray-mid); }
+  .info-card-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .info-card-value { font-size: 1rem; font-weight: 600; color: var(--text-dark); }
+
+  /* HIGHLIGHTS */
+  .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .highlight-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.15); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, transform 0.3s; }
+  .highlight-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .highlight-number { font-size: 0.75rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .highlight-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--white); margin-bottom: 0.75rem; }
+  .highlight-desc { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  /* FUN FACTS */
+  .facts-list { max-width: 700px; margin: 0 auto; }
+  .fact-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid var(--gray-mid); }
+  .fact-item:last-child { border-bottom: none; }
+  .fact-diamond { flex-shrink: 0; width: 10px; height: 10px; border: 2px solid var(--gold); transform: rotate(45deg); margin-top: 6px; }
+  .fact-text { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; }
+
+  /* CTA */
+  .cta-section { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 4rem 0; text-align: center; }
+  .cta-title { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--white); margin-bottom: 1rem; }
+  .cta-title .em { font-style: italic; color: var(--gold-light); font-weight: 400; }
+  .cta-cards { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 2rem 0; }
+  .cta-card { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.25rem 2rem; border: 1px solid rgba(201,168,76,0.25); border-radius: 12px; text-decoration: none; color: var(--white); transition: border-color 0.3s, background 0.3s; }
+  .cta-card:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+  .cta-icon { font-size: 1.5rem; }
+  .cta-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+  .cta-value { font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+
+  /* BACK LINK */
+  .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 2rem; transition: color 0.3s; }
+  .back-link:hover { color: var(--gold-bright); }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: var(--white); text-align: center; padding: 3rem 2rem; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; }
+  .footer-logo span { color: var(--gold); }
+  .footer-sub { font-size: 0.75rem; color: var(--text-light); margin-top: 0.5rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .footer-line { width: 60px; height: 1px; background: var(--gold); opacity: 0.3; margin: 1.5rem auto; }
+  .footer-copy { font-size: 0.75rem; color: var(--text-light); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; z-index: 999; }
+    .nav-links.active { display: flex; }
+    .nav-toggle { display: block; z-index: 1001; }
+    .highlights-grid { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: repeat(2, 1fr); }
+    .country-hero { min-height: 45vh; }
+  }
+
+  /* FADE ANIMATION */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Priceless <span>Joy</span> DMC</a>
+  <button class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('active')">&#9776;</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" onclick="closeNav()">Home</a></li>
+    <li><a href="index.html#destinations" onclick="closeNav()">Destinations</a></li>
+    <li><a href="index.html#tours" onclick="closeNav()">Tours</a></li>
+    <li><a href="index.html#contact" onclick="closeNav()">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="country-hero">
+  <div class="country-hero-bg" style="background-image: url('images/tour-group.jpg')"></div>
+  <div class="country-hero-overlay"></div>
+  <div class="country-hero-content">
+    <div class="country-hero-region">Southern Europe</div>
+    <h1 class="country-hero-title">Vatican City</h1>
+    <div class="hero-accent-line"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+    <p class="country-hero-desc">Vatican City, the world's smallest sovereign state nestled within the heart of Rome, is one of the most extraordinary destinations on earth, drawing millions of pilgrims and travellers alike with its unparalleled concentration of sacred art, history, and spiritual significance. Home to the Pope, the breathtaking St. Peter's Basilica, and the legendary Sistine Chapel, this tiny enclave holds treasures that have shaped Western civilisation for over two millennia. A visit here is nothing short of transformative â an immersive journey through faith, power, and the very pinnacle of human artistic achievement.</p>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Essential Information</p>
+      <h2 class="section-title"><span class="gold-underline">At a Glance</span></h2>
+    </div>
+    <div class="info-grid fade-up">
+      <div class="info-card">
+        <div class="info-card-label">Capital</div>
+        <div class="info-card-value">Vatican City</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Language</div>
+        <div class="info-card-value">Italian, Latin</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Currency</div>
+        <div class="info-card-value">Euro (EUR)</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Best Time to Visit</div>
+        <div class="info-card-value">April to June</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Must-See Experiences</p>
+      <h2 class="section-title white"><span class="gold-underline">Top Highlights</span></h2>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card fade-up">
+        <div class="highlight-number">01</div>
+        <h3 class="highlight-name">Sistine Chapel Ceiling</h3>
+        <p class="highlight-desc">Marvel at Michelangelo's breathtaking frescoes, including the iconic Creation of Adam, adorning the ceiling and altar wall of this sacred papal chapel.</p>
+      </div>
+      <div class="highlight-card fade-up">
+        <div class="highlight-number">02</div>
+        <h3 class="highlight-name">St. Peter's Basilica Dome</h3>
+        <p class="highlight-desc">Climb or take the elevator to the summit of St. Peter's Basilica's magnificent dome for panoramic views across Rome and the Vatican Gardens.</p>
+      </div>
+      <div class="highlight-card fade-up">
+        <div class="highlight-number">03</div>
+        <h3 class="highlight-name">Vatican Museums Collection</h3>
+        <p class="highlight-desc">Wander through centuries of papal collections spanning ancient sculpture, Renaissance masterpieces, and Egyptian antiquities across 54 galleries.</p>
+      </div>
+      <div class="highlight-card fade-up">
+        <div class="highlight-number">04</div>
+        <h3 class="highlight-name">St. Peter's Square</h3>
+        <p class="highlight-desc">Stand in the vast elliptical square embraced by Bernini's sweeping colonnade, the grand gateway to the heart of Catholic Christendom.</p>
+      </div>
+      <div class="highlight-card fade-up">
+        <div class="highlight-number">05</div>
+        <h3 class="highlight-name">Castel Sant'Angelo</h3>
+        <p class="highlight-desc">Explore the imposing circular mausoleum-turned-fortress that once sheltered popes during times of crisis, now offering spectacular views over the Tiber.</p>
+      </div>
+      <div class="highlight-card fade-up">
+        <div class="highlight-number">06</div>
+        <h3 class="highlight-name">Vatican Gardens Tour</h3>
+        <p class="highlight-desc">Stroll through the meticulously manicured Vatican Gardens, a serene green oasis covering half the city-state and reserved for the Pope's private retreat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Did You Know?</p>
+      <h2 class="section-title"><span class="gold-underline">Fun Facts</span></h2>
+    </div>
+    <div class="facts-list fade-up">
+      <div class="fact-item">
+        <div class="fact-diamond"></div>
+        <p class="fact-text">Vatican City is the world's smallest independent state, covering just 44 hectares â smaller than many city parks.</p>
+      </div>
+      <div class="fact-item">
+        <div class="fact-diamond"></div>
+        <p class="fact-text">The Vatican has its own telephone system, post office, radio station, and even issues its own euro coins, which are highly sought after by collectors.</p>
+      </div>
+      <div class="fact-item">
+        <div class="fact-diamond"></div>
+        <p class="fact-text">Michelangelo painted the entire Sistine Chapel ceiling largely alone, lying on scaffolding for four years between 1508 and 1512.</p>
+      </div>
+      <div class="fact-item">
+        <div class="fact-diamond"></div>
+        <p class="fact-text">The Swiss Guard, who protect the Pope, must be Catholic Swiss males and still wear a colourful Renaissance-era uniform said to have been designed by Michelangelo himself.</p>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <a href="index.html#destinations" class="back-link">&larr; Back to All Destinations</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-title">Interested in Vatican City?<br><span class="em">Let us craft the perfect tour for your clients</span></h2>
+    <div class="cta-cards">
+      <a href="mailto:geraldosulku@gmail.com" class="cta-card">
+        <span class="cta-icon">&#9993;</span>
+        <div class="cta-label">Email Us</div>
+        <div class="cta-value">geraldosulku@gmail.com</div>
+      </a>
+      <a href="https://wa.me/35568592297" class="cta-card" target="_blank" rel="noopener">
+        <span class="cta-icon">&#128222;</span>
+        <div class="cta-label">WhatsApp</div>
+        <div class="cta-value">+355 68 592 2971</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Priceless <span>Joy</span> DMC</div>
+  <div class="footer-sub">European Destination Management Company</div>
+  <div class="footer-line"></div>
+  <div class="footer-copy">&copy; 2026 Priceless Joy DMC. All rights reserved.</div>
+</footer>
+
+<script>
+  function closeNav() { document.getElementById('navLinks').classList.remove('active'); }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
