@@ -197,14 +197,15 @@ overflow:hidden;
 .hero-bg{
 position:absolute;
 inset:0;
-background-image:url('https://sulku95.github.io/pricelessjoydmc/images/coach_tour.jpg');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 transform:scale(1.05);
-transition:transform 12s ease;
+transition:transform 12s ease, opacity 1.5s ease;
 }
 .hero-bg.loaded{transform:scale(1)}
+.hero-bg.fade-out{opacity:0}
+.hero-bg.fade-in{opacity:1}
 .hero-overlay{
 position:absolute;
 inset:0;
@@ -907,6 +908,50 @@ text-align:center;
 .tour-body{padding:1.5rem}
 .contact-card{padding:2rem 1.5rem}
 }
+
+/* ===== COUNTRY CARDS ===== */
+.countries-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+gap:1rem;
+max-width:1100px;
+margin:0 auto;
+padding:0 1rem;
+}
+.country-card{
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:1.25rem 0.75rem;
+background:var(--white);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+transition:var(--transition);
+cursor:pointer;
+text-decoration:none;
+color:var(--text);
+border:2px solid transparent;
+}
+.country-card:hover{
+transform:translateY(-6px);
+box-shadow:var(--shadow-lg);
+border-color:var(--gold);
+}
+.country-flag{
+font-size:2.5rem;
+margin-bottom:0.5rem;
+}
+.country-name{
+font-family:'Playfair Display',serif;
+font-weight:600;
+font-size:0.95rem;
+color:var(--navy2);
+}
+@media(max-width:600px){
+.countries-grid{grid-template-columns:repeat(3,1fr);gap:0.75rem;}
+.country-flag{font-size:2rem;}
+.country-name{font-size:0.85rem;}
+}
 </style>
 </head>
 <body>
@@ -939,7 +984,8 @@ text-align:center;
 
 <!-- HERO -->
 <section id="hero" aria-label="Hero">
-<div class="hero-bg" id="heroBg"></div>
+<div class="hero-bg" id="heroBg" style="opacity:1;"></div>
+<div class="hero-bg" id="heroBg2" style="opacity:0;"></div>
 <div class="hero-overlay"></div>
 <div class="hero-content">
 <p class="hero-eyebrow fade-up">European Destination Management</p>
@@ -1107,6 +1153,82 @@ Plan Your Tour
 </div>
 <div class="coverage-note fade-up">
 <p><strong>28+ countries covered</strong> &mdash; All itineraries are designed with <strong>maximum 8 hours driving per day</strong> to ensure passenger comfort and an enjoyable travel experience throughout.</p>
+</div>
+
+<div class="countries-header" style="margin-top:3.5rem;">
+<p class="section-label fade-up">Explore Each Destination</p>
+<h3 class="section-title fade-up delay-1" style="font-size:1.75rem;">Countries We Cover</h3>
+<div class="gold-line fade-up delay-2" style="display:block;margin:0 auto 1.5rem"></div>
+</div>
+<div class="countries-grid">
+<a href="spain.html" class="country-card fade-up delay-1">
+<div class="country-flag">&#127466;&#127480;</div>
+<div class="country-name">Spain</div>
+</a>
+<a href="portugal.html" class="country-card fade-up delay-2">
+<div class="country-flag">&#127477;&#127481;</div>
+<div class="country-name">Portugal</div>
+</a>
+<a href="france.html" class="country-card fade-up delay-3">
+<div class="country-flag">&#127467;&#127479;</div>
+<div class="country-name">France</div>
+</a>
+<a href="italy.html" class="country-card fade-up delay-4">
+<div class="country-flag">&#127470;&#127481;</div>
+<div class="country-name">Italy</div>
+</a>
+<a href="vatican.html" class="country-card fade-up delay-1">
+<div class="country-flag">&#127483;&#127462;</div>
+<div class="country-name">Vatican</div>
+</a>
+<a href="germany.html" class="country-card fade-up delay-2">
+<div class="country-flag">&#127465;&#127466;</div>
+<div class="country-name">Germany</div>
+</a>
+<a href="switzerland.html" class="country-card fade-up delay-3">
+<div class="country-flag">&#127464;&#127469;</div>
+<div class="country-name">Switzerland</div>
+</a>
+<a href="austria.html" class="country-card fade-up delay-4">
+<div class="country-flag">&#127462;&#127481;</div>
+<div class="country-name">Austria</div>
+</a>
+<a href="netherlands.html" class="country-card fade-up delay-1">
+<div class="country-flag">&#127475;&#127473;</div>
+<div class="country-name">Netherlands</div>
+</a>
+<a href="belgium.html" class="country-card fade-up delay-2">
+<div class="country-flag">&#127463;&#127466;</div>
+<div class="country-name">Belgium</div>
+</a>
+<a href="poland.html" class="country-card fade-up delay-3">
+<div class="country-flag">&#127477;&#127473;</div>
+<div class="country-name">Poland</div>
+</a>
+<a href="slovenia.html" class="country-card fade-up delay-4">
+<div class="country-flag">&#127480;&#127470;</div>
+<div class="country-name">Slovenia</div>
+</a>
+<a href="croatia.html" class="country-card fade-up delay-1">
+<div class="country-flag">&#127469;&#127479;</div>
+<div class="country-name">Croatia</div>
+</a>
+<a href="bulgaria.html" class="country-card fade-up delay-2">
+<div class="country-flag">&#127463;&#127468;</div>
+<div class="country-name">Bulgaria</div>
+</a>
+<a href="albania.html" class="country-card fade-up delay-3">
+<div class="country-flag">&#127462;&#127473;</div>
+<div class="country-name">Albania</div>
+</a>
+<a href="ukraine.html" class="country-card fade-up delay-4">
+<div class="country-flag">&#127482;&#127462;</div>
+<div class="country-name">Ukraine</div>
+</a>
+<a href="belarus.html" class="country-card fade-up delay-1">
+<div class="country-flag">&#127463;&#127486;</div>
+<div class="country-name">Belarus</div>
+</a>
 </div>
 </div>
 </section>
@@ -1329,11 +1451,28 @@ if(s>80){navbar.classList.add('scrolled');}else{navbar.classList.remove('scrolle
 lastScroll=s;
 },{passive:true});
 
-// HERO BG LOADED
+// HERO SLIDESHOW - 16 real travel photos
 var heroBg=document.getElementById('heroBg');
-var heroImg=new Image();
-heroImg.onload=function(){heroBg.classList.add('loaded');};
-heroImg.src='https://sulku95.github.io/pricelessjoydmc/images/coach_tour.jpg';
+var heroBg2=document.getElementById('heroBg2');
+var heroImages=['https://sulku95.github.io/pricelessjoydmc/images/hero-mediterranean.jpg','https://sulku95.github.io/pricelessjoydmc/images/old-town-street.jpg','https://sulku95.github.io/pricelessjoydmc/images/swiss-alps.jpg','https://sulku95.github.io/pricelessjoydmc/images/paris-twilight.jpg','https://sulku95.github.io/pricelessjoydmc/images/dubrovnik-coast.jpg','https://sulku95.github.io/pricelessjoydmc/images/canal-europe.jpg','https://sulku95.github.io/pricelessjoydmc/images/vineyard-tuscany.jpg','https://sulku95.github.io/pricelessjoydmc/images/tour-group.jpg','https://sulku95.github.io/pricelessjoydmc/images/dubrovnik.jpg','https://sulku95.github.io/pricelessjoydmc/images/amsterdam.jpg','https://sulku95.github.io/pricelessjoydmc/images/coach_tour.jpg','https://sulku95.github.io/pricelessjoydmc/images/amalfi_coast.jpg','https://sulku95.github.io/pricelessjoydmc/images/rome_colosseum.jpg','https://sulku95.github.io/pricelessjoydmc/images/swiss_alps.jpg','https://sulku95.github.io/pricelessjoydmc/images/eiffel_tower.jpg','https://sulku95.github.io/pricelessjoydmc/images/kotor_bay.jpg'];
+var heroIdx=0;
+var activeLayer=heroBg;
+var inactiveLayer=heroBg2;
+// Preload all images
+heroImages.forEach(function(src){var i=new Image();i.src=src;});
+// Set first image
+heroBg.style.backgroundImage='url('+heroImages[0]+')';
+heroBg.classList.add('loaded');
+// Rotate every 5 seconds with crossfade
+setInterval(function(){
+heroIdx=(heroIdx+1)%heroImages.length;
+inactiveLayer.style.backgroundImage='url('+heroImages[heroIdx]+')';
+inactiveLayer.style.opacity='1';
+activeLayer.style.opacity='0';
+var tmp=activeLayer;
+activeLayer=inactiveLayer;
+inactiveLayer=tmp;
+},5000);
 
 // HAMBURGER
 var hamburger=document.getElementById('hamburger');
