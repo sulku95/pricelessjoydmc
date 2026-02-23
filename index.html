@@ -927,6 +927,25 @@
     #tours .container > div:first-child { grid-template-columns: repeat(2, 1fr) !important; }
   }
 
+
+  /* ===== HERO SLIDESHOW ===== */
+  .hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  .hero-slide.active {
+    opacity: 0.2;
+  }
+
 </style>
 </head>
 <body>
@@ -949,7 +968,16 @@
 
 <!-- HERO SECTION -->
 <section id="hero" style="position:relative;">
-  <div style="position:absolute;inset:0;background-image:url('images/hero-mediterranean.jpg');background-size:cover;background-position:center;opacity:0.15;"></div>
+  <div class="hero-slideshow">
+    <div class="hero-slide active" style="background-image:url('images/hero-mediterranean.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/swiss-alps.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/paris-twilight.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/dubrovnik-coast.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/canal-europe.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/vineyard-tuscany.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/old-town-street.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/tour-group.jpg')"></div>
+  </div>
   <div class="hero-geo"></div>
   <div class="hero-grid"></div>
   <div class="hero-dot-grid"></div>
@@ -1100,87 +1128,87 @@
     </div>
     <div class="dest-grid">
       <a href="spain.html" class="dest-card fade-up">
-        <div class="dest-flag">&#127466;&#127480;</div>
+        <div class="dest-flag">ðªð¸</div>
         <div class="dest-name">Spain</div>
         <div class="dest-region">Iberia</div>
       </a>
       <a href="portugal.html" class="dest-card fade-up fade-up-delay-1">
-        <div class="dest-flag">&#127477;&#127481;</div>
+        <div class="dest-flag">ðµð¹</div>
         <div class="dest-name">Portugal</div>
         <div class="dest-region">Iberia</div>
       </a>
       <a href="france.html" class="dest-card fade-up fade-up-delay-2">
-        <div class="dest-flag">&#127467;&#127479;</div>
+        <div class="dest-flag">ð«ð·</div>
         <div class="dest-name">France</div>
         <div class="dest-region">Western Europe</div>
       </a>
       <a href="netherlands.html" class="dest-card fade-up fade-up-delay-3">
-        <div class="dest-flag">&#127475;&#127473;</div>
+        <div class="dest-flag">ð³ð±</div>
         <div class="dest-name">Netherlands</div>
         <div class="dest-region">Western Europe</div>
       </a>
       <a href="belgium.html" class="dest-card fade-up">
-        <div class="dest-flag">&#127463;&#127466;</div>
+        <div class="dest-flag">ð§ðª</div>
         <div class="dest-name">Belgium</div>
         <div class="dest-region">Western Europe</div>
       </a>
       <a href="germany.html" class="dest-card fade-up fade-up-delay-1">
-        <div class="dest-flag">&#127465;&#127466;</div>
+        <div class="dest-flag">ð©ðª</div>
         <div class="dest-name">Germany</div>
         <div class="dest-region">Central Europe</div>
       </a>
       <a href="switzerland.html" class="dest-card fade-up fade-up-delay-2">
-        <div class="dest-flag">&#127464;&#127469;</div>
+        <div class="dest-flag">ð¨ð­</div>
         <div class="dest-name">Switzerland</div>
         <div class="dest-region">Central Europe</div>
       </a>
       <a href="austria.html" class="dest-card fade-up fade-up-delay-3">
-        <div class="dest-flag">&#127462;&#127481;</div>
+        <div class="dest-flag">ð¦ð¹</div>
         <div class="dest-name">Austria</div>
         <div class="dest-region">Central Europe</div>
       </a>
       <a href="italy.html" class="dest-card fade-up">
-        <div class="dest-flag">&#127470;&#127481;</div>
+        <div class="dest-flag">ð®ð¹</div>
         <div class="dest-name">Italy</div>
         <div class="dest-region">Southern Europe</div>
       </a>
       <a href="vatican.html" class="dest-card fade-up fade-up-delay-1">
-        <div class="dest-flag">&#127483;&#127462;</div>
+        <div class="dest-flag">ð»ð¦</div>
         <div class="dest-name">Vatican City</div>
         <div class="dest-region">Southern Europe</div>
       </a>
       <a href="croatia.html" class="dest-card fade-up fade-up-delay-2">
-        <div class="dest-flag">&#127469;&#127479;</div>
+        <div class="dest-flag">ð­ð·</div>
         <div class="dest-name">Croatia</div>
         <div class="dest-region">Balkans</div>
       </a>
       <a href="slovenia.html" class="dest-card fade-up fade-up-delay-3">
-        <div class="dest-flag">&#127480;&#127470;</div>
+        <div class="dest-flag">ð¸ð®</div>
         <div class="dest-name">Slovenia</div>
         <div class="dest-region">Balkans</div>
       </a>
       <a href="albania.html" class="dest-card fade-up">
-        <div class="dest-flag">&#127462;&#127473;</div>
+        <div class="dest-flag">ð¦ð±</div>
         <div class="dest-name">Albania</div>
         <div class="dest-region">Balkans</div>
       </a>
       <a href="poland.html" class="dest-card fade-up fade-up-delay-1">
-        <div class="dest-flag">&#127477;&#127473;</div>
+        <div class="dest-flag">ðµð±</div>
         <div class="dest-name">Poland</div>
         <div class="dest-region">Eastern Europe</div>
       </a>
       <a href="bulgaria.html" class="dest-card fade-up fade-up-delay-2">
-        <div class="dest-flag">&#127463;&#127468;</div>
+        <div class="dest-flag">ð§ð¬</div>
         <div class="dest-name">Bulgaria</div>
         <div class="dest-region">Eastern Europe</div>
       </a>
       <a href="ukraine.html" class="dest-card fade-up fade-up-delay-3">
-        <div class="dest-flag">&#127482;&#127462;</div>
+        <div class="dest-flag">ðºð¦</div>
         <div class="dest-name">Ukraine</div>
         <div class="dest-region">Eastern Europe</div>
       </a>
       <a href="belarus.html" class="dest-card fade-up">
-        <div class="dest-flag">&#127463;&#127486;</div>
+        <div class="dest-flag">ð§ð¾</div>
         <div class="dest-name">Belarus</div>
         <div class="dest-region">Eastern Europe</div>
       </a>
@@ -1379,6 +1407,18 @@
       }
     });
   });
+
+  // Hero Slideshow
+  (function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length === 0) return;
+    let current = 0;
+    setInterval(function() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4500);
+  })();
 </script>
 </body>
 </html>
