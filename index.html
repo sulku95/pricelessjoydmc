@@ -510,35 +510,50 @@ box-shadow:var(--shadow-lg);
 .regions-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:1.25rem;
+gap:1.5rem;
 }
 .region-card{
-background:linear-gradient(135deg,var(--navy),var(--navy2));
+background:linear-gradient(160deg,var(--navy),var(--navy2));
 border-radius:var(--radius);
-padding:2rem 1.5rem;
-text-align:center;
+overflow:hidden;
 border:1px solid rgba(201,168,76,0.2);
 transition:var(--transition);
 cursor:default;
+box-shadow:var(--shadow);
 }
 .region-card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px) scale(1.01);
 border-color:var(--gold);
-box-shadow:0 12px 40px rgba(10,22,40,0.2);
+box-shadow:0 16px 48px rgba(10,22,40,0.28);
+}
+.region-map{
+width:100%;
+height:150px;
+object-fit:cover;
+display:block;
+filter:brightness(0.88) saturate(0.9);
+transition:filter 0.35s ease;
+}
+.region-card:hover .region-map{
+filter:brightness(1) saturate(1.05);
+}
+.region-body{
+padding:1rem 1.25rem 1.25rem;
+text-align:center;
 }
 .region-icon{
-font-size:1.8rem;
-margin-bottom:0.75rem;
+font-size:1.4rem;
+margin-bottom:0.45rem;
 }
 .region-name{
 font-family:'Playfair Display',serif;
-font-size:1rem;
+font-size:0.95rem;
 font-weight:700;
 color:var(--white);
-margin-bottom:0.35rem;
+margin-bottom:0.3rem;
 }
 .region-sub{
-font-size:0.78rem;
+font-size:0.75rem;
 color:var(--gold);
 font-weight:500;
 letter-spacing:0.06em;
@@ -1121,46 +1136,79 @@ Request Partnership
 </div>
 <img src="https://sulku95.github.io/pricelessjoydmc/images/amsterdam.jpg" alt="Amsterdam, Netherlands &mdash; one of our tour destinations" class="amsterdam-banner fade-up" loading="lazy">
 <div class="regions-grid">
+
 <div class="region-card fade-up delay-1">
+<img class="region-map" src="https://staticmap.openstreetmap.de/staticmap.php?center=40.0,-4.0&zoom=5&size=300x200&maptype=osm" alt="Map of Iberia region" loading="lazy">
+<div class="region-body">
 <div class="region-icon">&#127466;&#127480;</div>
 <div class="region-name">Iberia</div>
 <div class="region-sub">Spain &middot; Portugal</div>
 </div>
+</div>
+
 <div class="region-card fade-up delay-2">
+<img class="region-map" src="https://staticmap.openstreetmap.de/staticmap.php?center=46.5,2.5&zoom=6&size=300x200&maptype=osm" alt="Map of France &amp; Monaco" loading="lazy">
+<div class="region-body">
 <div class="region-icon">&#127467;&#127479;</div>
 <div class="region-name">France</div>
 <div class="region-sub">France &middot; Monaco</div>
 </div>
+</div>
+
 <div class="region-card fade-up delay-3">
+<img class="region-map" src="https://staticmap.openstreetmap.de/staticmap.php?center=47.5,10.5&zoom=5&size=300x200&maptype=osm" alt="Map of Central Europe" loading="lazy">
+<div class="region-body">
 <div class="region-icon">&#127462;&#127481;</div>
 <div class="region-name">Central Europe</div>
 <div class="region-sub">Austria &middot; Switzerland &middot; Germany</div>
 </div>
+</div>
+
 <div class="region-card fade-up delay-4">
+<img class="region-map" src="https://staticmap.openstreetmap.de/staticmap.php?center=41.5,15.0&zoom=5&size=300x200&maptype=osm" alt="Map of Southern Europe" loading="lazy">
+<div class="region-body">
 <div class="region-icon">&#127470;&#127481;</div>
 <div class="region-name">Southern Europe</div>
 <div class="region-sub">Italy &middot; Greece &middot; Malta</div>
 </div>
+</div>
+
 <div class="region-card fade-up delay-1">
+<img class="region-map" src="https://staticmap.openstreetmap.de/staticmap.php?center=49.5,17.5&zoom=6&size=300x200&maptype=osm" alt="Map of Eastern Europe" loading="lazy">
+<div class="region-body">
 <div class="region-icon">&#127477;&#127473;</div>
 <div class="region-name">Eastern Europe</div>
 <div class="region-sub">Czech &middot; Hungary &middot; Slovakia</div>
 </div>
+</div>
+
 <div class="region-card fade-up delay-2">
+<img class="region-map" src="https://staticmap.openstreetmap.de/staticmap.php?center=43.5,17.5&zoom=6&size=300x200&maptype=osm" alt="Map of Balkans region" loading="lazy">
+<div class="region-body">
 <div class="region-icon">&#127463;&#127462;</div>
 <div class="region-name">Balkans</div>
 <div class="region-sub">Croatia &middot; Bosnia &middot; Montenegro</div>
 </div>
+</div>
+
 <div class="region-card fade-up delay-3">
+<img class="region-map" src="https://staticmap.openstreetmap.de/staticmap.php?center=60.0,13.0&zoom=4&size=300x200&maptype=osm" alt="Map of Scandinavia" loading="lazy">
+<div class="region-body">
 <div class="region-icon">&#127480;&#127466;</div>
 <div class="region-name">Scandinavia</div>
 <div class="region-sub">Norway &middot; Sweden &middot; Denmark</div>
 </div>
+</div>
+
 <div class="region-card fade-up delay-4">
+<img class="region-map" src="https://staticmap.openstreetmap.de/staticmap.php?center=54.0,-3.5&zoom=5&size=300x200&maptype=osm" alt="Map of British Isles" loading="lazy">
+<div class="region-body">
 <div class="region-icon">&#127468;&#127463;</div>
 <div class="region-name">British Isles</div>
 <div class="region-sub">UK &middot; Ireland &middot; Scotland</div>
 </div>
+</div>
+
 </div>
 <div class="coverage-note fade-up">
 <p><strong>28+ countries covered</strong> &mdash; All itineraries are designed with <strong>maximum 8 hours driving per day</strong> to ensure passenger comfort and an enjoyable travel experience throughout.</p>
