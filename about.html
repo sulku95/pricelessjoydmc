@@ -476,16 +476,28 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;font-weight:700
 }
 
 .founder-avatar {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
+  width: 280px;
+  height: 280px;
+  border-radius: 16px;
   margin: 0 auto;
-  border: 4px solid #c8a951;
-  background: linear-gradient(135deg, #1b2e4b 0%, #0f1b2d 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  border: 3px solid #c8a951;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  position: relative;
+  background: #111d32;
+}
+
+.founder-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.founder-avatar:hover .founder-img {
+  transform: scale(1.03);
 }
 
 .founder-avatar svg {
@@ -810,10 +822,8 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;font-weight:700
       </div>
 
       <div class="founder-grid">
-        <div class="founder-avatar" aria-label="Geraldo Sulku avatar silhouette">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
+        <div class="founder-avatar">
+          <img src="images/founder.jpg" alt="Geraldo Sulku - Founder & Managing Director of Priceless Joy DMC" class="founder-img" />
         </div>
 
         <div class="founder-info">
