@@ -321,6 +321,29 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;font-weight:700
     gap: 32px !important;
   }
 }
+
+/* ── Flagship Itinerary Cards ─────────────────────────── */
+.itinerary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.itinerary-grid .itinerary-card:nth-child(4){grid-column:1/2;justify-self:end;width:100%}
+.itinerary-grid .itinerary-card:nth-child(5){grid-column:2/3;justify-self:start;width:100%}
+.itinerary-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(0,0,0,.07);transition:all var(--transition);position:relative;display:flex;flex-direction:column}
+.itinerary-card:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(0,0,0,.13)}
+.itinerary-card-img{height:200px;background-size:cover;background-position:center;position:relative}
+.itinerary-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(15,27,45,.6) 100%)}
+.itinerary-duration{position:absolute;top:14px;right:14px;background:var(--gold);color:var(--navy);font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.04em;z-index:1}
+.best-seller-badge{position:absolute;top:14px;left:14px;background:var(--navy);color:var(--gold);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.06em;border:1px solid var(--gold);z-index:1;text-transform:uppercase}
+.itinerary-body{padding:22px 24px;flex:1;display:flex;flex-direction:column}
+.itinerary-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.25}
+.itinerary-tagline{font-size:.82rem;color:var(--gold);font-weight:600;margin-bottom:14px;line-height:1.4}
+.itinerary-flags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:14px}
+.itinerary-flags img{width:22px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.itinerary-highlights{margin:0 0 18px;padding:0;list-style:none;flex:1}
+.itinerary-highlights li{font-size:.82rem;color:var(--text-light);padding:3px 0 3px 16px;position:relative;line-height:1.45}
+.itinerary-highlights li::before{content:'›';position:absolute;left:0;color:var(--gold);font-weight:700}
+.itinerary-card .btn-outline{display:block;text-align:center;padding:.6rem 1.2rem;border:1.5px solid var(--gold);color:var(--navy);border-radius:8px;font-size:.85rem;font-weight:600;transition:all var(--transition);margin-top:auto}
+.itinerary-card .btn-outline:hover{background:var(--gold);color:var(--navy)}
+@media(max-width:900px){.itinerary-grid{grid-template-columns:1fr 1fr}.itinerary-grid .itinerary-card:nth-child(4),.itinerary-grid .itinerary-card:nth-child(5){grid-column:auto;justify-self:auto;width:auto}}
+@media(max-width:600px){.itinerary-grid{grid-template-columns:1fr}.itinerary-grid .itinerary-card:nth-child(4),.itinerary-grid .itinerary-card:nth-child(5){grid-column:auto;justify-self:auto;width:auto}}
 </style>
 <style>
   /* Strategic CTA Extensions */
@@ -647,71 +670,141 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;font-weight:700
 <section id="destinations" class="destinations-section">
   <div class="container">
     <div class="section-header fade-in">
-      <span class="section-tag">Explore Europe</span>
-      <h2 class="section-title">Handpicked Destinations</h2>
-      <p class="section-subtitle">Discover the continent's most captivating regions, each offering a unique tapestry of culture, cuisine and natural beauty.</p>
+      <span class="section-tag">Flagship Products</span>
+      <h2 class="section-title">Sample Itineraries</h2>
+      <p class="section-subtitle">Fully customisable programmes tailored to your client profile and market needs. All routes can be adapted for any group size or travel style.</p>
     </div>
 
-    <div class="destinations-grid">
-      <div class="destination-card fade-in">
-        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800&amp;q=80')">
-          <div class="destination-overlay">
-            <h3 class="destination-name">Iberian Peninsula</h3>
-            <p class="destination-tagline">Sun-soaked coasts, vibrant cities &amp; timeless traditions</p>
-            <a href="#contact" class="btn btn-primary btn-small">Plan My Trip</a>
+    <div class="itinerary-grid">
+
+      <!-- Card 1: European Essentials — BEST SELLER -->
+      <div class="itinerary-card fade-in">
+        <div class="itinerary-card-img" style="background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80')">
+          <span class="best-seller-badge">&#9733; Best Seller</span>
+          <span class="itinerary-duration">15 Days</span>
+        </div>
+        <div class="itinerary-body">
+          <div class="itinerary-name">European Essentials</div>
+          <div class="itinerary-tagline">The ultimate bucket-list grand tour — 7 countries, maximum value</div>
+          <div class="itinerary-flags">
+            <img src="https://flagcdn.com/w40/fr.png" alt="France" title="France">
+            <img src="https://flagcdn.com/w40/ch.png" alt="Switzerland" title="Switzerland">
+            <img src="https://flagcdn.com/w40/it.png" alt="Italy" title="Italy">
+            <img src="https://flagcdn.com/w40/at.png" alt="Austria" title="Austria">
+            <img src="https://flagcdn.com/w40/de.png" alt="Germany" title="Germany">
+            <img src="https://flagcdn.com/w40/nl.png" alt="Netherlands" title="Netherlands">
+            <img src="https://flagcdn.com/w40/be.png" alt="Belgium" title="Belgium">
           </div>
+          <ul class="itinerary-highlights">
+            <li>Eiffel Tower &amp; Paris illuminations</li>
+            <li>Mt. Titlis snow experience, Lucerne</li>
+            <li>Venice canals, Rome, Pisa Leaning Tower</li>
+            <li>Amsterdam canals &amp; tulip fields</li>
+            <li>Brussels Grand Place &amp; Belgian chocolate</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Request Itinerary</a>
         </div>
       </div>
 
-      <div class="destination-card fade-in">
-        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&amp;q=80')">
-          <div class="destination-overlay">
-            <h3 class="destination-name">France</h3>
-            <p class="destination-tagline">Art, gastronomy &amp; elegance at every turn</p>
-            <a href="#contact" class="btn btn-primary btn-small">Plan My Trip</a>
+      <!-- Card 2: Amore Tales of Europe -->
+      <div class="itinerary-card fade-in">
+        <div class="itinerary-card-img" style="background-image:url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80')">
+          <span class="itinerary-duration">11 Days</span>
+        </div>
+        <div class="itinerary-body">
+          <div class="itinerary-name">Amore Tales of Europe</div>
+          <div class="itinerary-tagline">The perfect balance of Alpine scenery and Mediterranean culture</div>
+          <div class="itinerary-flags">
+            <img src="https://flagcdn.com/w40/fr.png" alt="France" title="France">
+            <img src="https://flagcdn.com/w40/ch.png" alt="Switzerland" title="Switzerland">
+            <img src="https://flagcdn.com/w40/at.png" alt="Austria" title="Austria">
+            <img src="https://flagcdn.com/w40/it.png" alt="Italy" title="Italy">
           </div>
+          <ul class="itinerary-highlights">
+            <li>Paris — city of light &amp; romance</li>
+            <li>Lucerne &amp; Lake Geneva Alpine charm</li>
+            <li>Innsbruck Imperial Hofburg Palace</li>
+            <li>Venice gondola experience</li>
+            <li>Florence &amp; Rome — art &amp; history</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Request Itinerary</a>
         </div>
       </div>
 
-      <div class="destination-card fade-in">
-        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&amp;q=80')">
-          <div class="destination-overlay">
-            <h3 class="destination-name">Italy</h3>
-            <p class="destination-tagline">Ancient wonders, rolling hills &amp; la dolce vita</p>
-            <a href="#contact" class="btn btn-primary btn-small">Plan My Trip</a>
+      <!-- Card 3: Spain & Portugal Discovery -->
+      <div class="itinerary-card fade-in">
+        <div class="itinerary-card-img" style="background-image:url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800&q=80')">
+          <span class="itinerary-duration">10 Days</span>
+        </div>
+        <div class="itinerary-body">
+          <div class="itinerary-name">Spain &amp; Portugal Discovery</div>
+          <div class="itinerary-tagline">Rich history, world-class cuisine, and a relaxed Iberian pace</div>
+          <div class="itinerary-flags">
+            <img src="https://flagcdn.com/w40/es.png" alt="Spain" title="Spain">
+            <img src="https://flagcdn.com/w40/pt.png" alt="Portugal" title="Portugal">
           </div>
+          <ul class="itinerary-highlights">
+            <li>Madrid — Prado Museum &amp; Royal Palace</li>
+            <li>Toledo — medieval walled city</li>
+            <li>Seville flamenco &amp; Alcázar</li>
+            <li>Lisbon — Belém Tower &amp; Fado music</li>
+            <li>Porto wine cellars &amp; riverside Ribeira</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Request Itinerary</a>
         </div>
       </div>
 
-      <div class="destination-card fade-in">
-        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=800&amp;q=80')">
-          <div class="destination-overlay">
-            <h3 class="destination-name">Central Europe</h3>
-            <p class="destination-tagline">Alpine grandeur, fairy-tale cities &amp; rich heritage</p>
-            <a href="#contact" class="btn btn-primary btn-small">Plan My Trip</a>
+      <!-- Card 4: Central Europe Explorer -->
+      <div class="itinerary-card fade-in">
+        <div class="itinerary-card-img" style="background-image:url('https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=800&q=80')">
+          <span class="itinerary-duration">10 Days</span>
+        </div>
+        <div class="itinerary-body">
+          <div class="itinerary-name">Central Europe Explorer</div>
+          <div class="itinerary-tagline">Imperial capitals and stunning architecture at exceptional value</div>
+          <div class="itinerary-flags">
+            <img src="https://flagcdn.com/w40/de.png" alt="Germany" title="Germany">
+            <img src="https://flagcdn.com/w40/cz.png" alt="Czech Republic" title="Czech Republic">
+            <img src="https://flagcdn.com/w40/at.png" alt="Austria" title="Austria">
+            <img src="https://flagcdn.com/w40/hu.png" alt="Hungary" title="Hungary">
           </div>
+          <ul class="itinerary-highlights">
+            <li>Prague — Old Town Square &amp; Charles Bridge</li>
+            <li>Vienna — Schönbrunn Palace &amp; opera</li>
+            <li>Budapest — Danube panorama &amp; thermal baths</li>
+            <li>Munich — Marienplatz &amp; Bavarian culture</li>
+            <li>Rothenburg ob der Tauber fairy-tale town</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Request Itinerary</a>
         </div>
       </div>
 
-      <div class="destination-card fade-in">
-        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1555990793-da11153b2473?w=800&amp;q=80')">
-          <div class="destination-overlay">
-            <h3 class="destination-name">Balkans</h3>
-            <p class="destination-tagline">Hidden gems, dramatic coastlines &amp; warm hospitality</p>
-            <a href="#contact" class="btn btn-primary btn-small">Plan My Trip</a>
+      <!-- Card 5: Balkans Discovery -->
+      <div class="itinerary-card fade-in">
+        <div class="itinerary-card-img" style="background-image:url('https://images.unsplash.com/photo-1555990793-da11153b2473?w=800&q=80')">
+          <span class="itinerary-duration">10 Days</span>
+        </div>
+        <div class="itinerary-body">
+          <div class="itinerary-name">Balkans Discovery</div>
+          <div class="itinerary-tagline">Europe's best-kept secret — emerging destinations, unbeatable value</div>
+          <div class="itinerary-flags">
+            <img src="https://flagcdn.com/w40/hr.png" alt="Croatia" title="Croatia">
+            <img src="https://flagcdn.com/w40/si.png" alt="Slovenia" title="Slovenia">
+            <img src="https://flagcdn.com/w40/ba.png" alt="Bosnia" title="Bosnia &amp; Herzegovina">
+            <img src="https://flagcdn.com/w40/me.png" alt="Montenegro" title="Montenegro">
+            <img src="https://flagcdn.com/w40/al.png" alt="Albania" title="Albania">
           </div>
+          <ul class="itinerary-highlights">
+            <li>Dubrovnik — Pearl of the Adriatic</li>
+            <li>Lake Bled &amp; Triglav National Park</li>
+            <li>Kotor Bay UNESCO Old Town</li>
+            <li>Mostar — iconic Stari Most bridge</li>
+            <li>Tirana &amp; Albanian Riviera coast</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Request Itinerary</a>
         </div>
       </div>
 
-      <div class="destination-card fade-in">
-        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?w=800&amp;q=80')">
-          <div class="destination-overlay">
-            <h3 class="destination-name">Scandinavia</h3>
-            <p class="destination-tagline">Fjords, northern lights &amp; pristine wilderness</p>
-            <a href="#contact" class="btn btn-primary btn-small">Plan My Trip</a>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
