@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery | Priceless Joy DMC - European Destination Management</title>
+  <meta name="description" content="Explore our photo gallery featuring European group destinations, iconic landmarks, luxury travel experiences, and bespoke itineraries across 28+ countries.">
+  <meta name="keywords" content="European DMC gallery, travel photos Europe, group tours Europe, Priceless Joy DMC photos, luxury travel Europe, France, Italy, Switzerland, Spain, Balkans">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Priceless Joy DMC">
+  <link rel="canonical" href="https://pricelessjoydmc.com/gallery.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Photo Gallery | Priceless Joy DMC">
+  <meta property="og:description" content="Explore Europe through our lens. Over 200 tours handled across 28+ European countries for international travel partners.">
+  <meta property="og:url" content="https://pricelessjoydmc.com/gallery.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Priceless Joy DMC Europe Photo Gallery",
+    "description": "Destination photos and tour highlights managed by Priceless Joy DMC across Europe.",
+    "url": "https://pricelessjoydmc.com/gallery.html",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Priceless Joy DMC",
+      "url": "https://pricelessjoydmc.com/"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #0f1b2d;
+      --navy-light: #1a2d47;
+      --gold: #c8a951;
+      --gold-light: #d4b96a;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-light: #e8e6e1;
+      --gray: #9ca3af;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --radius: 12px;
+      --transition: 0.3s ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 5%;
+      background: rgba(15, 27, 45, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(200, 169, 81, 0.2);
+    }
+    .logo {
+      text-decoration: none;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+    .logo span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--gold);
+    }
+    .logo small {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray-light);
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold);
+    }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 2px;
+      background-color: var(--white);
+      transition: var(--transition);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 5% 3rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(15, 27, 45, 0.8) 0%, rgba(15, 27, 45, 1) 100%),
+                  url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      border-bottom: 1px solid rgba(200, 169, 81, 0.15);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--gray-light);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Main Container */
+    .gallery-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 3rem 5% 5rem;
+    }
+
+    /* Filter Buttons */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      background: rgba(26, 45, 71, 0.8);
+      border: 1px solid rgba(200, 169, 81, 0.3);
+      color: var(--white);
+      padding: 0.65rem 1.4rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      box-shadow: 0 4px 15px rgba(200, 169, 81, 0.3);
+    }
+
+    /* Photo Grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .photo-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(200, 169, 81, 0.15);
+      transition: var(--transition);
+    }
+    .photo-card.hidden {
+      display: none;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .photo-card:hover img {
+      transform: scale(1.08);
+    }
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(15, 27, 45, 0.9) 0%, rgba(15, 27, 45, 0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .photo-card:hover .photo-overlay {
+      opacity: 1;
+    }
+    .photo-location {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .photo-country {
+      font-size: 0.85rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 0.2rem;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 27, 45, 0.95);
+      backdrop-filter: blur(15px);
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 75vh;
+      border-radius: var(--radius);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      border: 1px solid rgba(200, 169, 81, 0.3);
+      object-fit: contain;
+    }
+    .lightbox-caption {
+      margin-top: 1rem;
+    }
+    .lightbox-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+    .lightbox-sub {
+      font-size: 0.95rem;
+      color: var(--gray-light);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .lightbox-close:hover {
+      color: var(--gold);
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(26, 45, 71, 0.8);
+      border: 1px solid rgba(200, 169, 81, 0.4);
+      color: var(--white);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    .lightbox-nav:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .lightbox-prev { left: -3.5rem; }
+    .lightbox-next { right: -3.5rem; }
+
+    /* Footer */
+    footer {
+      background: #09121f;
+      padding: 4rem 5% 2rem;
+      border-top: 1px solid rgba(200, 169, 81, 0.2);
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand p {
+      color: var(--gray);
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .footer-col h4 {
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      color: var(--gray);
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .lightbox-prev { left: 0.5rem; }
+      .lightbox-next { right: 0.5rem; }
+    }
+    @media (max-width: 600px) {
+      .photo-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(200, 169, 81, 0.2);
+      }
+      .nav-links.active { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo" aria-label="Priceless Joy DMC home">
+      <span>Priceless Joy</span>
+      <small>DMC</small>
+    </a>
+
+    <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" onclick="document.getElementById('primary-navigation').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="primary-navigation">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="itineraries.html">Itineraries</a></li>
+      <li><a href="gallery.html" class="active" style="color: #c8a951;">Gallery</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#destinations">Destinations</a></li>
+      <li><a href="index.html#testimonials">Testimonials</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Gallery</h1>
+    <p>Explore Europe through our lens — curated highlights from over 200 bespoke group tours delivered across 28+ countries.</p>
+  </section>
+
+  <!-- Gallery Main -->
+  <main class="gallery-container">
+
+    <!-- Category Filters -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="france">France</button>
+      <button class="filter-btn" data-filter="italy">Italy</button>
+      <button class="filter-btn" data-filter="switzerland">Switzerland</button>
+      <button class="filter-btn" data-filter="spain">Spain</button>
+      <button class="filter-btn" data-filter="balkans">Balkans</button>
+      <button class="filter-btn" data-filter="central-europe">Central Europe</button>
+      <button class="filter-btn" data-filter="scandinavia">Scandinavia</button>
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="photo-grid" id="photo-grid">
+
+      <!-- 1. Eiffel Tower (France) -->
+      <div class="photo-card" data-category="france" data-full="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80" data-location="Eiffel Tower, Paris" data-country="France">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower, Paris, France" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Eiffel Tower, Paris</div>
+          <div class="photo-country">France</div>
+        </div>
+      </div>
+
+      <!-- 2. Colosseum (Italy) -->
+      <div class="photo-card" data-category="italy" data-full="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80" data-location="The Colosseum, Rome" data-country="Italy">
+        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80" alt="The Colosseum, Rome, Italy" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">The Colosseum, Rome</div>
+          <div class="photo-country">Italy</div>
+        </div>
+      </div>
+
+      <!-- 3. Swiss Alps (Switzerland) -->
+      <div class="photo-card" data-category="switzerland" data-full="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80" data-location="Swiss Alps & Zermatt" data-country="Switzerland">
+        <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600&q=80" alt="Swiss Alps, Switzerland" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Swiss Alps & Zermatt</div>
+          <div class="photo-country">Switzerland</div>
+        </div>
+      </div>
+
+      <!-- 4. Sagrada Familia (Spain) -->
+      <div class="photo-card" data-category="spain" data-full="https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1200&q=80" data-location="Sagrada Fam&iacute;lia, Barcelona" data-country="Spain">
+        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=600&q=80" alt="Sagrada Familia, Barcelona, Spain" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Sagrada Fam&iacute;lia, Barcelona</div>
+          <div class="photo-country">Spain</div>
+        </div>
+      </div>
+
+      <!-- 5. Venice Canals (Italy) -->
+      <div class="photo-card" data-category="italy" data-full="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=1200&q=80" data-location="Grand Canal, Venice" data-country="Italy">
+        <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=600&q=80" alt="Grand Canal, Venice, Italy" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Grand Canal, Venice</div>
+          <div class="photo-country">Italy</div>
+        </div>
+      </div>
+
+      <!-- 6. Dubrovnik Old Town Walls (Balkans) -->
+      <div class="photo-card" data-category="balkans" data-full="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80" data-location="Dubrovnik City Walls" data-country="Croatia &bull; Balkans">
+        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Dubrovnik City Walls, Croatia" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Dubrovnik City Walls</div>
+          <div class="photo-country">Croatia &bull; Balkans</div>
+        </div>
+      </div>
+
+      <!-- 7. Prague Castle & Charles Bridge (Central Europe) -->
+      <div class="photo-card" data-category="central-europe" data-full="https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1200&q=80" data-location="Charles Bridge & Castle, Prague" data-country="Czech Republic &bull; Central Europe">
+        <img src="https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=600&q=80" alt="Prague Castle, Czech Republic" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Charles Bridge & Castle, Prague</div>
+          <div class="photo-country">Czech Republic &bull; Central Europe</div>
+        </div>
+      </div>
+
+      <!-- 8. Norwegian Fjords (Scandinavia) -->
+      <div class="photo-card" data-category="scandinavia" data-full="https://images.unsplash.com/photo-1506701153880-15d3b266223b?auto=format&fit=crop&w=1200&q=80" data-location="Geirangerfjord & Mountains" data-country="Norway &bull; Scandinavia">
+        <img src="https://images.unsplash.com/photo-1506701153880-15d3b266223b?auto=format&fit=crop&w=600&q=80" alt="Geirangerfjord, Norway" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Geirangerfjord & Mountains</div>
+          <div class="photo-country">Norway &bull; Scandinavia</div>
+        </div>
+      </div>
+
+      <!-- 9. Budapest Parliament (Central Europe) -->
+      <div class="photo-card" data-category="central-europe" data-full="https://images.unsplash.com/photo-1565426873118-a17ed65d7429?auto=format&fit=crop&w=1200&q=80" data-location="Hungarian Parliament, Budapest" data-country="Hungary &bull; Central Europe">
+        <img src="https://images.unsplash.com/photo-1565426873118-a17ed65d7429?auto=format&fit=crop&w=600&q=80" alt="Hungarian Parliament, Budapest" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Hungarian Parliament, Budapest</div>
+          <div class="photo-country">Hungary &bull; Central Europe</div>
+        </div>
+      </div>
+
+      <!-- 10. Vienna Schönbrunn Palace (Central Europe) -->
+      <div class="photo-card" data-category="central-europe" data-full="https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=1200&q=80" data-location="Sch&ouml;nbrunn Palace, Vienna" data-country="Austria &bull; Central Europe">
+        <img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=600&q=80" alt="Schonbrunn Palace, Vienna" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Sch&ouml;nbrunn Palace, Vienna</div>
+          <div class="photo-country">Austria &bull; Central Europe</div>
+        </div>
+      </div>
+
+      <!-- 11. Amalfi Coast (Italy) -->
+      <div class="photo-card" data-category="italy" data-full="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80" data-location="Positano & Amalfi Coast" data-country="Italy">
+        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Amalfi Coast, Italy" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Positano & Amalfi Coast</div>
+          <div class="photo-country">Italy</div>
+        </div>
+      </div>
+
+      <!-- 12. Santorini Caldera (Balkans / S. Europe) -->
+      <div class="photo-card" data-category="balkans" data-full="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=80" data-location="Santorini Island" data-country="Greece &bull; S. Europe">
+        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80" alt="Santorini Island, Greece" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Santorini Island</div>
+          <div class="photo-country">Greece &bull; S. Europe</div>
+        </div>
+      </div>
+
+      <!-- 13. Amsterdam Canals (Central Europe) -->
+      <div class="photo-card" data-category="central-europe" data-full="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=1200&q=80" data-location="Amsterdam Historic Canals" data-country="Netherlands &bull; Central Europe">
+        <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=600&q=80" alt="Amsterdam Canals, Netherlands" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Amsterdam Historic Canals</div>
+          <div class="photo-country">Netherlands &bull; Central Europe</div>
+        </div>
+      </div>
+
+      <!-- 14. Lisbon Historic Tram (Spain / Iberian Peninsula) -->
+      <div class="photo-card" data-category="spain" data-full="https://images.unsplash.com/photo-1508672019048-805479767513?auto=format&fit=crop&w=1200&q=80" data-location="Lisbon Tram 28" data-country="Portugal &bull; Iberian Peninsula">
+        <img src="https://images.unsplash.com/photo-1508672019048-805479767513?auto=format&fit=crop&w=600&q=80" alt="Lisbon Tram, Portugal" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Lisbon Tram 28</div>
+          <div class="photo-country">Portugal &bull; Iberian Peninsula</div>
+        </div>
+      </div>
+
+      <!-- 15. Bruges Historic Canals (Central Europe) -->
+      <div class="photo-card" data-category="central-europe" data-full="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1200&q=80" data-location="Bruges Medieval Canals" data-country="Belgium &bull; Central Europe">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=600&q=80" alt="Bruges, Belgium" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Bruges Medieval Canals</div>
+          <div class="photo-country">Belgium &bull; Central Europe</div>
+        </div>
+      </div>
+
+      <!-- 16. Lucerne & Lake Lucerne (Switzerland) -->
+      <div class="photo-card" data-category="switzerland" data-full="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80" data-location="Lake Lucerne & Chapel Bridge" data-country="Switzerland">
+        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=600&q=80" alt="Lake Lucerne, Switzerland" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Lake Lucerne & Chapel Bridge</div>
+          <div class="photo-country">Switzerland</div>
+        </div>
+      </div>
+
+      <!-- 17. Lake Bled (Balkans) -->
+      <div class="photo-card" data-category="balkans" data-full="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=1200&q=80" data-location="Lake Bled Island" data-country="Slovenia &bull; Balkans">
+        <img src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=600&q=80" alt="Lake Bled, Slovenia" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Lake Bled Island</div>
+          <div class="photo-country">Slovenia &bull; Balkans</div>
+        </div>
+      </div>
+
+      <!-- 18. Stockholm Old Town (Scandinavia) -->
+      <div class="photo-card" data-category="scandinavia" data-full="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=1200&q=80" data-location="Gamla Stan, Stockholm" data-country="Sweden &bull; Scandinavia">
+        <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=600&q=80" alt="Gamla Stan, Stockholm, Sweden" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-location">Gamla Stan, Stockholm</div>
+          <div class="photo-country">Sweden &bull; Scandinavia</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close modal">&times;</button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#10094;</button>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#10095;</button>
+      <img src="" alt="" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption">
+        <div class="lightbox-title" id="lightbox-title"></div>
+        <div class="lightbox-sub" id="lightbox-sub"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span>Priceless Joy</span>
+          <small>DMC</small>
+        </a>
+        <p>Your trusted European Destination Management Company. Crafting seamless group tours, luxury incentives, and custom itineraries across 28+ European countries.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="itineraries.html">Itineraries</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Top Destinations</h4>
+        <ul>
+          <li><a href="gallery.html?filter=france">France &amp; Paris</a></li>
+          <li><a href="gallery.html?filter=italy">Italy &amp; Amalfi</a></li>
+          <li><a href="gallery.html?filter=switzerland">Swiss Alps</a></li>
+          <li><a href="gallery.html?filter=spain">Spain &amp; Portugal</a></li>
+          <li><a href="gallery.html?filter=balkans">Balkans Region</a></li>
+          <li><a href="gallery.html?filter=central-europe">Central Europe</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>Email: info@pricelessjoydmc.com</li>
+          <li>Location: Europe-Wide Ground Operations</li>
+          <li>Credentials: 200+ Tours Delivered</li>
+          <li>Partner Support: 24/7 Multi-lingual</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Priceless Joy DMC. All rights reserved.</div>
+      <div>Premier European B2B Travel Partner</div>
+    </div>
+  </footer>
+
+  <!-- Filter & Lightbox JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const photoCards = Array.from(document.querySelectorAll('.photo-card'));
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxSub = document.getElementById('lightbox-sub');
+      const closeBtn = document.getElementById('lightbox-close');
+      const prevBtn = document.getElementById('lightbox-prev');
+      const nextBtn = document.getElementById('lightbox-next');
+
+      let visibleCards = [...photoCards];
+      let currentIndex = 0;
+
+      // Filter Logic
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+          photoCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          visibleCards = photoCards.filter(card => !card.classList.contains('hidden'));
+        });
+      });
+
+      // Lightbox Logic
+      function showLightbox(index) {
+        if (visibleCards.length === 0) return;
+        currentIndex = (index + visibleCards.length) % visibleCards.length;
+        const card = visibleCards[currentIndex];
+        
+        lightboxImg.src = card.getAttribute('data-full');
+        lightboxImg.alt = card.getAttribute('data-location');
+        lightboxTitle.innerHTML = card.getAttribute('data-location');
+        lightboxSub.innerHTML = card.getAttribute('data-country');
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function hideLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      photoCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const idx = visibleCards.indexOf(card);
+          if (idx !== -1) showLightbox(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', hideLightbox);
+      prevBtn.addEventListener('click', () => showLightbox(currentIndex - 1));
+      nextBtn.addEventListener('click', () => showLightbox(currentIndex + 1));
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) hideLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') hideLightbox();
+        if (e.key === 'ArrowLeft') showLightbox(currentIndex - 1);
+        if (e.key === 'ArrowRight') showLightbox(currentIndex + 1);
+      });
+
+      // Query param filter support (e.g. gallery.html?filter=italy)
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlFilter = urlParams.get('filter');
+      if (urlFilter) {
+        const targetBtn = document.querySelector(`.filter-btn[data-filter="${urlFilter}"]`);
+        if (targetBtn) targetBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
