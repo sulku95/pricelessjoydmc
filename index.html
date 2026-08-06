@@ -908,25 +908,26 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;font-weight:700
             <h4 style="font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--navy); margin-bottom: 8px;">Submit a Review Directly</h4>
             <p style="font-size: 0.88rem; color: var(--text-light); margin-bottom: 24px; line-height: 1.5;">Submit your review below or email us directly at <a href="mailto:info@pricelessjoydmc.com?subject=Review%20Submission" style="color: var(--gold); text-decoration: underline;">info@pricelessjoydmc.com</a>.</p>
 
-            <form action="mailto:info@pricelessjoydmc.com?subject=Review%20Submission%20for%20Priceless%20Joy%20DMC" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 16px;">
-              <input type="hidden" name="Subject" value="Review Submission for Priceless Joy DMC">
+            <form action="https://formspree.io/f/xeajoegk" method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+              <input type="hidden" name="_subject" value="New Review Submission - Priceless Joy DMC">
+              <input type="hidden" name="_next" value="https://pricelessjoydmc.com?review=thanks">
               
               <div>
                 <label for="review-name" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Your Name *</label>
-                <input type="text" id="review-name" name="Name" required placeholder="e.g. Eleanor Vance" style="width: 100%; padding: 12px 14px; font-size: 0.9rem; border: 1px solid rgba(15,27,45,0.15); border-radius: 4px; background: var(--white); color: var(--navy); outline: none;">
+                <input type="text" id="review-name" name="name" required placeholder="e.g. Eleanor Vance" style="width: 100%; padding: 12px 14px; font-size: 0.9rem; border: 1px solid rgba(15,27,45,0.15); border-radius: 4px; background: var(--white); color: var(--navy); outline: none;">
               </div>
 
               <div>
                 <label for="review-company" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Company / Agency Name *</label>
-                <input type="text" id="review-company" name="Company/Agency" required placeholder="e.g. Apex Journeys Ltd." style="width: 100%; padding: 12px 14px; font-size: 0.9rem; border: 1px solid rgba(15,27,45,0.15); border-radius: 4px; background: var(--white); color: var(--navy); outline: none;">
+                <input type="text" id="review-company" name="company" required placeholder="e.g. Apex Journeys Ltd." style="width: 100%; padding: 12px 14px; font-size: 0.9rem; border: 1px solid rgba(15,27,45,0.15); border-radius: 4px; background: var(--white); color: var(--navy); outline: none;">
               </div>
 
               <div>
                 <label for="review-message" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Your Review / Feedback *</label>
-                <textarea id="review-message" name="Review Message" rows="4" required placeholder="Share your experience working with Priceless Joy DMC..." style="width: 100%; padding: 12px 14px; font-size: 0.9rem; border: 1px solid rgba(15,27,45,0.15); border-radius: 4px; background: var(--white); color: var(--navy); outline: none; resize: vertical;"></textarea>
+                <textarea id="review-message" name="message" rows="4" required placeholder="Share your experience working with Priceless Joy DMC..." style="width: 100%; padding: 12px 14px; font-size: 0.9rem; border: 1px solid rgba(15,27,45,0.15); border-radius: 4px; background: var(--white); color: var(--navy); outline: none; resize: vertical;"></textarea>
               </div>
 
-              <button type="submit" class="btn btn-gold" style="width: 100%; padding: 14px; margin-top: 4px; font-weight: 600; cursor: pointer; text-align: center; border: none;">Submit Review</button>
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; margin-top: 4px; font-weight: 600; cursor: pointer; text-align: center;">Submit Review</button>
             </form>
             <div style="margin-top: 18px; text-align: center; font-size: 0.9rem; color: var(--text-light);">
               Or email us directly at <a href="mailto:info@pricelessjoydmc.com?subject=Review%20Submission%20for%20Priceless%20Joy%20DMC" style="color: var(--gold); font-weight: 600; text-decoration: underline;">info@pricelessjoydmc.com</a>
@@ -1248,5 +1249,18 @@ window.addEventListener('scroll', () => {
     <span>Request a Quote</span>
   </a>
 
+<script>
+  (function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('review') === 'thanks') {
+      const banner = document.createElement('div');
+      banner.className = 'review-thanks-banner';
+      banner.style.cssText = 'background-color: #c8a951; color: #0f1b2d; padding: 16px; text-align: center; font-weight: bold; font-size: 1.1rem; position: fixed; top: 0; left: 0; right: 0; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.15);';
+      banner.innerText = 'Thank you for your review! We appreciate your feedback.';
+      document.body.prepend(banner);
+      setTimeout(() => { banner.remove(); }, 8000);
+    }
+  })();
+</script>
 </body>
 </html>
